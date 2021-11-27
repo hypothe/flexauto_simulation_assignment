@@ -24,20 +24,28 @@ Fuel Pump	| Cast Iron							|	7.20
 
 ## Item spawn
 
-A dummy object (**ItemSpawner**, child of **InConveyor**) is responsible to spawn the items via its child script.
+A dummy object (**ItemSpawner**, child of **InConveyor**) is responsible to spawn the items via its child script. The delay between each spawn is, currently, hardcoded as 20 seconds +- 4 seconds of random variability added on purpose.
+To each model spawned is added a reasonable random rotation component to model variability in the incoming items orientation.
 
-> TODO: add the child script with spawning  
-> TODO: add a random rotation component to the spawned items to increase variability
+## Conveyors
+
+Same width chosen to reduce the need to custom fit each one to each new item encountered, in order to increase generlizeability.
+
+## Robot definition
+
+Since the load/unload task does not require fine manipulation of the conveyed objects, a 3DoF Cartesian (PPP) mechanism has been chosen as the body of the robot. For the end effector, instead, has been articulated with a 2DoF (RR) system (yaw, pitch): the third degree has not been actuated, since the fact the items will always be presented on the conveyor belt reduces the manifold of possible gripping postures (or, at least, makes the reachable 2D manifold close enough to the optimum picking points to allow a firm grisp). This is further strenghtened by the end effector chosen.
 
 ---
 
 # Roadmap
 
-- 24/11:
+[x] 25/11:
   - ItemSpawner script 
   - Output conveyors
+  
+[ ] 26/11:
   - robot DH definition
-- 25/11:
   - robot modeling/ kitbashing
-- 26/11:
+  
+[] 27/11:
   - Robot inverse kinematics
