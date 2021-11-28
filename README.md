@@ -35,6 +35,48 @@ Same width chosen to reduce the need to custom fit each one to each new item enc
 
 Since the load/unload task does not require fine manipulation of the conveyed objects, a 3DoF Cartesian (PPP) mechanism has been chosen as the body of the robot. For the end effector, instead, has been articulated with a 2DoF (RR) system (yaw, pitch): the third degree has not been actuated, since the fact the items will always be presented on the conveyor belt reduces the manifold of possible gripping postures (or, at least, makes the reachable 2D manifold close enough to the optimum picking points to allow a firm grisp). This is further strenghtened by the end effector chosen.
 
+## Actuation
+
+Joint1: 
+  - Type: prismatic
+  - Min Position: 0.00 m
+  - Range: 4.65 m
+  - Max Force: 50.00 N
+  - Upper Velocity Limit: 1.00 m/s
+  - PID: (0.10, 0.00, 0.03)
+
+Joint2: 
+  - Type: prismatic
+  - Min Position: 0.00 m
+  - Range: 2.20 m
+  - Max Force: 50.00 N
+  - Upper Velocity Limit: 1.00 m/s
+  - PID: (0.10, 0.00, 0.03)
+
+Joint3: 
+  - Type: prismatic
+  - Min Position: 0.00 m
+  - Range: 1.5 m
+  - Max Force: 50.00 N
+  - Upper Velocity Limit: 1.00 m/s
+  - PID: (0.10, 0.00, 0.00)
+
+Joint4: 
+  - Type: revolute
+  - Min Position: -70°
+  - Range: 140°
+  - Max Torque: 2.50 N*m
+  - Upper Velocity Limit: 10.00 deg/s
+  - PID: (0.10, 0.00, 0.00)
+
+Joint5: 
+  - Type: revolute
+  - Min Position: 0
+  - Range: 360° (yclic)
+  - Max Torque: 2.50 N*m
+  - Upper Velocity Limit: 15.00 deg/s
+  - PID: (0.10, 0.00, 0.01)
+
 ---
 
 # Roadmap
