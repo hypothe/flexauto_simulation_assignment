@@ -72,7 +72,7 @@ Joint4:
 Joint5: 
   - Type: revolute
   - Min Position: 0
-  - Range: 360° (yclic)
+  - Range: 360° (cyclic)
   - Max Torque: 2.50 N*m
   - Upper Velocity Limit: 15.00 deg/s
   - PID: (0.10, 0.00, 0.01)
