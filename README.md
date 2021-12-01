@@ -111,6 +111,17 @@ Joint5:
   - visual sensors placement
   - object detection
 
+[ ] 01/12:
+  - start working on FSM
+    - identify the pick point of each incoming item
+    - check if path can be modified at runtime
+    - generate path toward item
+
+[ ] 02/12:
+  - keep working on FSM
+    - generate path to drop point
+    - release item
+
 [ ] ??/12:
   - robot DH definition
   - robot modeling/ kitbashing
