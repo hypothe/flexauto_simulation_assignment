@@ -77,6 +77,25 @@ Joint5:
   - Upper Velocity Limit: 10.00 deg/s
   - PID: (0.10, 0.00, 0.00)
 
+## Sensors
+
+### Camera
+
+  The idea is to use 2 RGB-D cameras with short field of view mounted on opposite ends of the robot structure, directly above the input conveyors and directed so as to look at the latter. RGB-D provide more information on the 3D rotation of the objects, which is especially useful to identify the correct grasping point for complex objects such as the Cam Shaft (for which the top-facing cylindrical piece should be grabbed in order to avoid collision with the item itself).
+  While, ideally, a single RGB-D camera would have sufficed to keep the entire input-conveyor in the frame, it should have been placed in the center of the X axis of the mechanism in order for the sensor to have a top-down view of the belt (for a more reliable estimation of the items transformations). However, this configuration would have had the robotic arm always in the center of the frame, thus covering most of the belt.
+  On the contrary, moving the camera to one of the edges would have caused a distortion that would have compromized the items' classification.
+  The redundant configuration of the cameras here presented allows to always have a clear view of all items in at least one of the two frames. In terms of the computer vision algorithm to be used (here not presented) a robust object classification and tracking should be considered, that can manage to work with multiple sources, possibly overlapping and/or incomplete (due to the arm generating occlusion).
+
+  > NOTE: since two visual sensors are used, we ccould opt for RGB ones with the depth information provided by stereo vision. However, due to the large distortion that the images would have (given the large inter-sensor distance and near focus point) this would probably be practically unfeasible.
+
+  #### Technical Note
+
+  As already mentioned, no actual CV algorithm is run in the simulation (since it's not the goal of this project): so, to retrieve the objects present in each camera frame, the sensor's render mode is set to *OpenGL, color coded handles*, where the information on the objects present in the field of view of the cameras are directly coded in the RGB values of the image. For this reason the resolution of the cameras has been kept low, since no real processing was computed. Keep in mind that, in the real scenario, this has to be carefully taken into consideration!
+
+  > The input conveyor shape has been set to non-renderable to have the cameras ignore it.
+
+  Similarly, the Depth value is not used here to detect the best gripping points among preset ones: the simplification adopted here is to just choose the picking point that's higher (larger world-frame z value), assuming that would always be the unencoumbered one.
+
 ---
 
 # Roadmap
@@ -85,9 +104,13 @@ Joint5:
   - ItemSpawner script 
   - Output conveyors
   
-[ ] 26/11:
+[x] 28/11:
+  - Robot inverse kinematics
+
+[x] 30/11:
+  - visual sensors placement
+  - object detection
+
+[ ] ??/12:
   - robot DH definition
   - robot modeling/ kitbashing
-  
-[] 27/11:
-  - Robot inverse kinematics
