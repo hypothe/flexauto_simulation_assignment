@@ -111,13 +111,19 @@ Joint5:
   - visual sensors placement
   - object detection
 
-[ ] 01/12:
+[x] 01/12:
   - start working on FSM
     - identify the pick point of each incoming item
     - check if path can be modified at runtime
     - generate path toward item
+  
+[ ] 04/12:
+  - abandon (temporarily) the work on the dynamic grab
+  - modify the cell so as to stop the input conveyor once an item
+    arrives at a predetermined grabbing point
+  - should I re-evaluate the entire cell? Leave that to the end, if need be.
 
-[ ] 02/12:
+[ ] 06/12:
   - keep working on FSM
     - generate path to drop point
     - release item
