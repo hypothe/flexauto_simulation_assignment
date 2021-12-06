@@ -100,36 +100,39 @@ Joint5:
 
 # Roadmap
 
-[x] 25/11:
+- [x] 25/11:
   - ItemSpawner script 
   - Output conveyors
   
-[x] 28/11:
+- [x] 28/11:
   - Robot inverse kinematics
 
-[x] 30/11:
+- [x] 30/11:
   - visual sensors placement
   - object detection
 
-[x] 01/12:
+- [x] 01/12:
   - start working on FSM
     - identify the pick point of each incoming item
     - check if path can be modified at runtime
     - generate path toward item
   
-[ ] 04/12:
+- [x] 04/12:
   - abandon (temporarily) the work on the dynamic grab
   - modify the cell so as to stop the input conveyor once an item
     arrives at a predetermined grabbing point
   - should I re-evaluate the entire cell? Leave that to the end, if need be.
-
-[ ] 06/12:
   - keep working on FSM
     - generate path to drop point
     - release item
 
-[ ] ??/12:
+- [x] 06/12:
   - robot DH definition
+  
+- [ ] 07/12:
+  - object final orientation managing
+
+- [ ] ???/12
   - robot modeling/ kitbashing
 
 ## DEBUG
