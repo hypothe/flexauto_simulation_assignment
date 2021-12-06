@@ -59,7 +59,7 @@ Joint3:
   - Range: 1.50 m
   - Max Force: 50.00 N
   - Upper Velocity Limit: 1.00 m/s
-  - PID: (0.10, 0.00, 0.00)
+  - PID: (0.05, 0.00, 0.00)
   - 
 Joint4: 
   - Type: revolute
@@ -131,3 +131,13 @@ Joint5:
 [ ] ??/12:
   - robot DH definition
   - robot modeling/ kitbashing
+
+## DEBUG
+
+### PID definition
+
+We should strive to remove vibration
+
+Joint4:
+  (0.05, 0, 0) small vibrations, slow
+  (0.05, 0, 0.01) almost no vibrations, very slow
