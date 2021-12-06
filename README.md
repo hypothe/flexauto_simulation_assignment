@@ -131,6 +131,7 @@ Joint5:
   
 - [ ] 07/12:
   - object final orientation managing
+  - object outout flow control
 
 - [ ] ???/12
   - robot modeling/ kitbashing
