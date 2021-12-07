@@ -130,6 +130,7 @@ Joint5:
   - robot DH definition
   
 - [ ] 07/12:
+  - make the dynamicVelocity function take the two thresholds as parameters
   - object final orientation managing
   - object outout flow control
 
