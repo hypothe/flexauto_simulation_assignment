@@ -51,7 +51,7 @@ Joint2:
   - Range: 2.20 m
   - Max Force: 50.00 N
   - Upper Velocity Limit: 0.80 m/s
-  - PID: (0.10, 0.00, 0.05)
+  - PID: (0.08, 0.00, 0.05)
 
 Joint3: 
   - Type: prismatic
