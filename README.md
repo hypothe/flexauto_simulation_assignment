@@ -58,28 +58,30 @@ Joint3:
   - Min Position: 0.00 m
   - Range: 1.50 m
   - Max Force: 50.00 N
-  - Upper Velocity Limit: 1.00 m/s
-  - PID: (0.05, 0.00, 0.00)
+  - Upper Velocity Limit: 0.50 m/s
+  - PID: (0.1, 0.00, 0.00)
   - 
 Joint4: 
   - Type: revolute
   - Min Position: 0
   - Range: 360° (cyclic)
-  - Max Torque: 2.50 N*m
-  - Upper Velocity Limit: 15.00 deg/s
-  - PID: (0.10, 0.00, 0.00)
+  - Max Torque: 25.00 N*m
+  - Upper Velocity Limit: 10.00 deg/s
+  - PID: (0.05, 0.00, 0.01)
   - 
 Joint5: 
   - Type: revolute
   - Min Position: -120°
   - Range: 240°
-  - Max Torque: 2.50 N*m
-  - Upper Velocity Limit: 10.00 deg/s
-  - PID: (0.10, 0.00, 0.00)
+  - Max Torque: 25.0 N*m
+  - Upper Velocity Limit: 20.00 deg/s
+  - PID: (0.08, 0.00, 0.02)
 
 ## Sensors
 
 ### Camera
+
+| Note: the following considerations hold true for the original design, which was created for dynamic grasping of the objects, without blockage of the conveyor.
 
   The idea is to use 2 RGB-D cameras with short field of view mounted on opposite ends of the robot structure, directly above the input conveyors and directed so as to look at the latter. RGB-D provide more information on the 3D rotation of the objects, which is especially useful to identify the correct grasping point for complex objects such as the Cam Shaft (for which the top-facing cylindrical piece should be grabbed in order to avoid collision with the item itself).
   While, ideally, a single RGB-D camera would have sufficed to keep the entire input-conveyor in the frame, it should have been placed in the center of the X axis of the mechanism in order for the sensor to have a top-down view of the belt (for a more reliable estimation of the items transformations). However, this configuration would have had the robotic arm always in the center of the frame, thus covering most of the belt.
@@ -129,20 +131,10 @@ Joint5:
 - [x] 06/12:
   - robot DH definition
   
-- [ ] 07/12:
+- [x] 07/12:
   - make the dynamicVelocity function take the two thresholds as parameters
   - object final orientation managing
   - object outout flow control
 
-- [ ] ???/12
+- [x] 11/12
   - robot modeling/ kitbashing
-
-## DEBUG
-
-### PID definition
-
-We should strive to remove vibration
-
-Joint4:
-  (0.05, 0, 0) small vibrations, slow
-  (0.05, 0, 0.01) almost no vibrations, very slow
